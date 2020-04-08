@@ -12,8 +12,8 @@ from refextract import extract_references_from_file
 
 
 citation_map = nx.Graph(directed=True)
-references = extract_references_from_file('/home/gadfly/Documents/Books/example.pdf')
-#print(references)
+references = extract_references_from_file('/home/user/Documents/Books/example.pdf')
+
 options = {
     'node_color': '#28a7ea',
     'node_size': 600,
@@ -22,10 +22,10 @@ options = {
     'arrowsize': 25,
 }
 
+base = os.path.basename('/home/user/Documents/Books/example.pdf')
+name = os.path.splitext(base)[0]
 
 i = 1
-base = os.path.basename('/home/gadfly/Documents/Books/example.pdf')
-name = os.path.splitext(base)[0]
 
 while (i < 10):
     i = i + 1
@@ -33,9 +33,6 @@ while (i < 10):
     print(citations)
     citation_map.add_edge(name, *citations)
     citation_map.add_nodes_from(citations)
-
-
-
 
 # Layout
 nx.draw_networkx(citation_map, arrows=True, **options)
