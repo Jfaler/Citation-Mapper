@@ -3,7 +3,7 @@ Programmer: Justin Faler
 Date: 4/7/2020
 Description: PDF Citation Map
 '''
-from tqdm import tqdm
+
 import numpy as np
 import networkx as nx
 import pdfminer, re, sys, os, time, csv
@@ -12,7 +12,7 @@ from refextract import extract_references_from_file
 
 
 citation_map = nx.Graph(directed=True)
-references = extract_references_from_file('/home/user/Documents/Books/example.pdf')
+references = extract_references_from_file('/home/gadfly/Documents/Books/math.pdf')
 
 options = {
     'node_color': '#28a7ea',
@@ -22,7 +22,7 @@ options = {
     'arrowsize': 25,
 }
 
-base = os.path.basename('/home/user/Documents/Books/example.pdf')
+base = os.path.basename('/home/gadfly/Documents/Books/math.pdf')
 name = os.path.splitext(base)[0]
 
 i = 1
