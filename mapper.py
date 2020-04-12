@@ -39,7 +39,7 @@ while (i < 30):
 
 # Layout
 pos = nx.spring_layout(citation_map)
-nx.draw_networkx(citation_map, ChildProcessError, arrows=True, **options)
+nx.draw_networkx(citation_map, pos, arrows=True, **options)
 plt.tight_layout()
 plt.axis('off')
 plt.show()
